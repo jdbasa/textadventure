@@ -2,7 +2,7 @@ CXX = g++					# compiler
 CXXFLAGS = -g -Wall -MMD			# compiler flags
 MAKEFILE_NAME = ${firstword ${MAKEFILE_LIST}}	# makefile name
 
-OBJECTS = main.o
+OBJECTS = src/*.o
 DEPENDS = ${OBJECTS:.o=.d}			# substitute ".o" with ".d"
 EXEC = lit.o
 
