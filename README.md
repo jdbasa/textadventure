@@ -84,3 +84,25 @@ To attack, use `attack [left|right]`. Attack damage dealt to another character i
 
 #### Guarding
 To guard, use `guard [left|right]`. If a character is already guarding while there is an attack to them, the character will block more damage than usual with possible side effects.
+
+
+#### Item Usage
+To use an item during combat is the same as using an item outside of combat: `use [item name]`.
+
+
+### Exploration
+The point of the game is to kill the dragon that terrorizes the people of the land. 
+
+To see the world map use `map`. Use the legend on the map to orientate yourself.
+
+Every grid space on the map is considered an area. To look around use the `inspect` command. This gives you a list of items you are able to pick up. Using `inspect [item name]` gives you information on the item much like how `info [item name]` would. The different is that `info` is used for inventory items and `inspect` is used for items not yet picked up.
+
+To move into a new area you must walk to it using the `walk` command with a direction: `walk [north|south|east|west]`. Walking into a new area means potentially running into an enemy. You may run into many enemies.
+
+
+### Stretch goals
+
+* Party members
+* Trading
+* Story
+* Talking to people
