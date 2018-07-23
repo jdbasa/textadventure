@@ -2,7 +2,8 @@ CXX = g++					# compiler
 CXXFLAGS = -g -Wall -MMD -I src/headers
 MAKEFILE_NAME = ${firstword ${MAKEFILE_LIST}}	# makefile name
 
-OBJECTS = src/*.o src/characters/*.o src/items/*.o
+SOURCES = $(wildcard src/*.cpp src/characters/*.cpp src/items/*.cpp)
+OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 DEPENDS = ${OBJECTS:.o=.d}			# substitute ".o" with ".d"
 EXEC = lit.o
 
