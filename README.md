@@ -34,15 +34,15 @@ To use an active ability: `use [armor name]`.
 Armor comes with defence.
 
 ### Weapons
-All characters can have weapons, there are two types of weapons: Attacking Weapons and Defensive Weapons.
+All characters can have weapons, there are two types of weapons: Offensive Weapons and Defensive Weapons.
 
-An Attacking Weapon is something like a sword or knife.  
+An Offensive Weapon is something like a sword or knife.  
 A Defensive Weapon is something like sheild.
 
-A character may hold a maximum of two weapons. Some weapons require the usage of two hands. You may use AWs or DWs for either attacking or defending, but an AW will usually be worse than DWs at guarding and DWs will be worse at attacking than AWs.
+A character may hold a maximum of two weapons. Some weapons require the usage of two hands. You may use OWs or DWs for either attacking or guarding, but an OW will usually be worse than DWs at guarding and DWs will be worse at attacking than OWs.
 
-To equip weapons: `equip [weapon_name]`. To attack: `attack [left|right]`. To guard: `guard [left|right]`.
+To equip weapons: `equip [weapon name]`. To attack: `attack [left|right]`. To guard: `guard [left|right]`. 
 
 Weapons may also have passive and active abilities. The rules to those apply like the armor.
 
-
+Weapons also have a speed, which is an integer that has a minimum of 0. It determines how much 'time' a weapon needs to attack - more on this later.
