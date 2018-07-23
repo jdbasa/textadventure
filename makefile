@@ -1,8 +1,8 @@
 CXX = g++					# compiler
-CXXFLAGS = -g -Wall -MMD			# compiler flags
+CXXFLAGS = -g -Wall -MMD -I src/headers
 MAKEFILE_NAME = ${firstword ${MAKEFILE_LIST}}	# makefile name
 
-OBJECTS = src/*.o
+OBJECTS = src/*.o src/characters/*.o
 DEPENDS = ${OBJECTS:.o=.d}			# substitute ".o" with ".d"
 EXEC = lit.o
 
@@ -21,3 +21,6 @@ ${OBJECTS} : ${MAKEFILE_NAME}			# OPTIONAL : changes to this file => recompile
 
 clean :						# remove files that can be regenerated
 	rm -f ${DEPENDS} ${OBJECTS} ${EXEC}
+
+run :
+	./${EXEC}
