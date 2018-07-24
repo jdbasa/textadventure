@@ -1,16 +1,12 @@
 #include <iostream>
-#include "inventory.h"
+#include "area.h"
 
 using namespace std;
 
 int main(int args, char** cargs) {
-	Inventory inventory;
+	Area area(1);
 
-	inventory.add(RUSTED_SWORD);
-	inventory.add(RUSTED_SWORD);
-	inventory.add(RUSTED_SWORD);
-	inventory.add(RUSTED_SWORD);
-	inventory.print(cout);
+	area.print(cout);
 
 	return 0;
 }

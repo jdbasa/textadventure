@@ -4,8 +4,6 @@
 #include "item.h"
 #include "item_name.h"
 
-const unsigned int ITEM_COUNT = 3;
-
 class Items {
 public:
 	static const Items instance;

@@ -35,7 +35,9 @@ unsigned int Inventory::amount(ItemName name) const {
 
 void Inventory::print(ostream& out) {
 	for (unsigned int i = 0; i < ITEM_COUNT; i++) {
-		out << Items::instance.to_string((ItemName)i) << " " << amount((ItemName)i) << endl;
+		unsigned int amount = this->amount((ItemName)i);
+		if (!amount) continue;
+		out << Items::instance.to_string((ItemName)i) << " " << amount << endl;
 	}
 }
 

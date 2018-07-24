@@ -16,6 +16,8 @@ Item* Items::create(ItemName name) {
 			return new RustedSword();
 		case RUSTED_SHIELD:
 			return new RustedShield();
+		case RUSTED_HELMET:
+			return new RustedHelmet();
 		default:
 			return 0;
 	}
