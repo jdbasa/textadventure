@@ -1,3 +1,5 @@
+#pragma once
+
 namespace Commands {
 	enum Command {
 		WALK,
@@ -7,6 +9,7 @@ namespace Commands {
 		INFO,
 		EQUIP,
 		PICK_UP,
-		DROP
+		DROP,
+		INVALID
 	};
 }
