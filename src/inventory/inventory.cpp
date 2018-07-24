@@ -1,4 +1,7 @@
 #include "inventory.h"
+#include "items.h"
+
+using namespace std;
 
 Inventory::Inventory() {
 	amounts = new unsigned int[ITEM_COUNT];
@@ -22,8 +25,18 @@ bool Inventory::remove(ItemName name) {
 	return true;
 }
 
-Item* Inventory::get(ItemName name) {
-	return 0;
+Item* Inventory::get(ItemName name) const {
+	return Items::instance.get(name);
+}
+
+unsigned int Inventory::amount(ItemName name) const {
+	return amounts[name];
+}
+
+void Inventory::print(ostream& out) {
+	for (unsigned int i = 0; i < ITEM_COUNT; i++) {
+		out << Items::instance.to_string((ItemName)i) << " " << amount((ItemName)i) << endl;
+	}
 }
 
 Inventory::~Inventory() {

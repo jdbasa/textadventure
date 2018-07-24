@@ -25,6 +25,17 @@ Item* Items::get(ItemName name) const {
 	return items[name];
 }
 
+std::string Items::to_string(ItemName name) const {
+	switch (name) {
+		case RUSTED_SWORD:
+			return "Rusted Sword";
+		case RUSTED_SHIELD:
+			return "Rusted Shield";
+		default:
+			return "No name";
+	}
+}
+
 Items::~Items() {
 	for (unsigned int i = 0; i < ITEM_COUNT; i++) {
 		delete items[i];

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "slot.h"
+#include "item_name.h"
 
 class Character;
 
@@ -11,9 +12,10 @@ enum ItemType {
 };
 
 struct Item {
-	Item(ItemType type, int rarity, int speed) :
-	type(type), rarity(rarity), speed(speed) {} 
+	Item(ItemName name, ItemType type, int rarity, int speed) :
+	name(name), type(type), rarity(rarity), speed(speed) {} 
 
+	const ItemName name;
 	const ItemType type;
 	const int rarity;
 	const int speed;
@@ -22,8 +24,8 @@ struct Item {
 };
 
 struct Weapon : Item {
-	Weapon(int rarity, int speed, int attack, int consumption) :
-	Item(WEAPON, rarity, speed), attack(attack), consumption(consumption) {}
+	Weapon(ItemName name, int rarity, int speed, int attack, int consumption) :
+	Item(name, WEAPON, rarity, speed), attack(attack), consumption(consumption) {}
 
 	const int attack;
 	const int consumption;
@@ -32,8 +34,8 @@ struct Weapon : Item {
 };
 
 struct Armor : Item {
-	Armor(int rarity, int speed, Slot slot, int defence, int consumption) :
-	Item(ARMOR, rarity, speed), slot(slot), defence(defence), consumption(consumption) {}
+	Armor(ItemName name, int rarity, int speed, Slot slot, int defence, int consumption) :
+	Item(name, ARMOR, rarity, speed), slot(slot), defence(defence), consumption(consumption) {}
 
 	const Slot slot;
 	const int defence;

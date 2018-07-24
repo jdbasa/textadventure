@@ -1,8 +1,16 @@
 #include <iostream>
+#include "inventory.h"
 
 using namespace std;
 
 int main(int args, char** cargs) {
-	cout << "Hello World" << endl;
+	Inventory inventory;
+
+	inventory.add(RUSTED_SWORD);
+	inventory.add(RUSTED_SWORD);
+	inventory.add(RUSTED_SWORD);
+	inventory.add(RUSTED_SWORD);
+	inventory.print(cout);
+
 	return 0;
 }
