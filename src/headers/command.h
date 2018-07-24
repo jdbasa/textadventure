@@ -1,4 +1,4 @@
-enum Commands {
+enum Command {
 	WALK,
 	INVENTORY,
 	ARMOR,
