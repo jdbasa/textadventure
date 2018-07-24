@@ -1,22 +1,25 @@
 class Character;
 
-class Item {
-	virtual int rarity() = 0;
+struct Item {
+	Item(int rarity, int speed);
+
+	const int rarity;
+	const int speed;
 };
 
-class Weapon : Item {
-	// from Item
-	virtual int rarity() = 0;
+struct Weapon : Item {
+	Weapon(int rarity, int speed, int attack, int consumption);
 
-	virtual int attack() = 0;
-	virtual int consumption() = 0;
-	virtual int effect(Character* from) = 0;
+	const int attack;
+	const int consumption;
+
+	virtual void effect(Character* from) {}
 };
 
-class Armor : Item {
-	// from Item
-	virtual int rarity() = 0;
-	
-	virtual int defence() = 0;
-	virtual void passive(Character* from, int& incoming_damage) = 0;
+struct Armor : Item {
+	Armor(int rarity, int speed, int defence, int consumption);
+
+	const int defence;
+	const int consumption;
+	virtual void passive(Character* from, int& incoming_damage) {}
 };
