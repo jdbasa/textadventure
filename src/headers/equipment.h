@@ -1,18 +1,7 @@
 #pragma once
 
 #include "inventory.h"
-
-enum Slot {
-	INVALID = 0,
-	HEAD,
-	BODY,
-	RIGHT_HAND,
-	LEFT_HAND,
-	LEGS,
-	FEET
-};
-
-const unsigned int SLOT_COUNT = 7;
+#include "slot.h"
 
 class Equipment {
 public:

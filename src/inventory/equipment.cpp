@@ -1,4 +1,5 @@
 #include "equipment.h"
+#include "items.h"
 
 Equipment::Equipment() {
 	slots = new ItemType[SLOT_COUNT];
@@ -20,6 +21,11 @@ ItemType Equipment::get(Slot slot) {
 	return slots[slot];
 }
 
-bool Equipment::fits_slot(Slot slot, ItemType item) {
-	return false;
+bool Equipment::fits_slot(Slot slot, ItemType name) {
+	Item* item = Items::instance.get(name);
+
+	if (item->type != ARMOR) return false;
+
+	return ((Armor*)item)->slot == slot;
+	
 }

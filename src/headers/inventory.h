@@ -1,20 +1,10 @@
 #pragma once
 
 #include "item.h"
-
-enum ItemType {
-	NONE = 0,
-	RUSTED_SWORD,
-	RUSTED_SHEILD,
-	RUSTED_HELMET
-};
-
-const int ITEM_COUNT = 3;
+#include "items.h"
 
 class Inventory {
 public:
-	static bool is_armor(ItemType item);
-
 	Inventory();
 
 	void add(ItemType type);
@@ -23,8 +13,12 @@ public:
 
 	~Inventory();
 private:
-	Item* create(ItemType type);
-
-	int* amounts;
-	Item** items;
+	unsigned int* amounts;
 };
+
+
+
+
+
+
+
