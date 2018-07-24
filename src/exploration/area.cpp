@@ -12,6 +12,15 @@ Area::~Area() {
 	delete[] amounts;
 }
 
+bool Area::pick_up(Character& character, ItemName name) {
+	if (!remove(name)) {
+		return false;
+	}
+
+	character.inventory.add(name);
+	return true;
+}
+
 void Area::print(ostream& out) {
 	for (unsigned int i = 0; i < item_count; i++) {
 		if (!amounts[i]) continue;
@@ -29,3 +38,21 @@ void Area::generate() {
 		amounts[i] = 1;
 	}
 }
+
+bool Area::remove(ItemName name) {
+	for (unsigned int i = 0; i < item_count; i++) {
+		if (floor_items[i] != name || amounts[i] == 0) {
+			continue;
+		}
+
+		amounts[i]--;
+		return true;
+	}
+
+	return false;
+}
+
+
+
+
+
