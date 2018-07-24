@@ -1,9 +1,13 @@
+#pragma once
+
 #include <istream>
+#include "character.h"
+#include "command.h"
 
 class Game {
 public:
 	Character player;
 	void update();
 
-	Command get_command(istream& in);
+	Commands::Command get_command(std::istream& in);
 };

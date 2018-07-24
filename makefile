@@ -2,7 +2,7 @@ CXX = g++					# compiler
 CXXFLAGS = -g -Wall -MMD -I src/headers
 MAKEFILE_NAME = ${firstword ${MAKEFILE_LIST}}	# makefile name
 
-SOURCES = $(wildcard src/*.cpp src/characters/*.cpp src/inventory/*.cpp src/inventory/weapons/*.cpp src/exploration/*.cpp)
+SOURCES = $(wildcard src/*.cpp src/characters/*.cpp src/inventory/*.cpp src/inventory/weapons/*.cpp src/exploration/*.cpp src/game/*.cpp)
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 DEPENDS = ${OBJECTS:.o=.d}			# substitute ".o" with ".d"
 EXEC = lit.o
