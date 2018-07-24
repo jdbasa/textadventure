@@ -3,3 +3,7 @@
 struct RustedSword : Weapon {
 	RustedSword();
 };
+
+struct RustedShield : Weapon {
+	RustedShield();
+}
