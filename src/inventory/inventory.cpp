@@ -8,21 +8,21 @@ Inventory::Inventory() {
 	}
 }
 
-void Inventory::add(ItemType type) {
-	amounts[type]++;
+void Inventory::add(ItemName name) {
+	amounts[name]++;
 }
 
-bool Inventory::remove(ItemType type) {
-	if (amounts[type] == 0) {
+bool Inventory::remove(ItemName name) {
+	if (amounts[name] == 0) {
 		return false;
 	}
 
-	amounts[type]--;
+	amounts[name]--;
 
 	return true;
 }
 
-Item* Inventory::get(ItemType type) {
+Item* Inventory::get(ItemName name) {
 	return 0;
 }
 

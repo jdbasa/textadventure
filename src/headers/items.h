@@ -2,7 +2,7 @@
 
 #include "item.h"
 
-enum ItemType {
+enum ItemName {
 	NONE = 0,
 	RUSTED_SWORD,
 	RUSTED_SHIELD,
@@ -17,8 +17,8 @@ public:
 
 	Items();
 
-	Item* create(ItemType name);
-	Item* get(ItemType name) const;
+	Item* create(ItemName name);
+	Item* get(ItemName name) const;
 
 	~Items();
 private:

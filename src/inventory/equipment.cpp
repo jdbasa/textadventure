@@ -2,26 +2,26 @@
 #include "items.h"
 
 Equipment::Equipment() {
-	slots = new ItemType[SLOT_COUNT];
+	slots = new ItemName[SLOT_COUNT];
 	for (unsigned int i = 0; i < SLOT_COUNT; i++) {
 		slots[i] = NONE; 
 	}
 }
 
-bool Equipment::equip(Slot slot, ItemType item) {
-	if (!fits_slot(slot, item)) {
+bool Equipment::equip(Slot slot, ItemName name) {
+	if (!fits_slot(slot, name)) {
 		return false;
 	}
 
-	slots[slot] = item;
+	slots[slot] = name;
 	return true;
 }
 
-ItemType Equipment::get(Slot slot) {
+ItemName Equipment::get(Slot slot) {
 	return slots[slot];
 }
 
-bool Equipment::fits_slot(Slot slot, ItemType name) {
+bool Equipment::fits_slot(Slot slot, ItemName name) {
 	Item* item = Items::instance.get(name);
 
 	if (item->type != ARMOR) return false;

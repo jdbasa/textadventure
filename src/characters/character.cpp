@@ -3,11 +3,7 @@
 
 using namespace std;
 
-int Character::get_level() {
-	return level;
-}
-
-int Character::get_health() {
+int Character::get_health() const {
 	return health;
 }
 
@@ -23,7 +19,7 @@ int Character::gain(int heal) {
 	return health;
 }
 
-int Character::get_magic() {
+int Character::get_magic() const {
 	return magic;
 }
 

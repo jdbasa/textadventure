@@ -4,17 +4,17 @@
 
 class Character;
 
-enum Type {
+enum ItemType {
 	ARMOR,
 	WEAPON,
 	OTHER
 };
 
 struct Item {
-	Item(Type type, int rarity, int speed) :
+	Item(ItemType type, int rarity, int speed) :
 	type(type), rarity(rarity), speed(speed) {} 
 
-	const Type type;
+	const ItemType type;
 	const int rarity;
 	const int speed;
 

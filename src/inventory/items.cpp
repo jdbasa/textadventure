@@ -6,11 +6,11 @@
 Items::Items() {
 	items = new Item*[ITEM_COUNT];
 	for (unsigned int i = 0; i < ITEM_COUNT; i++) {
-		items[i] = create((ItemType)i);
+		items[i] = create((ItemName)i);
 	}
 }
 
-Item* Items::create(ItemType name) {
+Item* Items::create(ItemName name) {
 	switch (name) {
 		case RUSTED_SWORD:
 			return new RustedSword();
@@ -21,7 +21,7 @@ Item* Items::create(ItemType name) {
 	}
 }
 
-Item* Items::get(ItemType name) const {
+Item* Items::get(ItemName name) const {
 	return items[name];
 }
 

@@ -7,9 +7,9 @@ class Inventory {
 public:
 	Inventory();
 
-	void add(ItemType type);
-	bool remove(ItemType type);
-	Item* get(ItemType type);
+	void add(ItemName type);
+	bool remove(ItemName type);
+	Item* get(ItemName type);
 
 	~Inventory();
 private:

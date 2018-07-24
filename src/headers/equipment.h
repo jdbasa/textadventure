@@ -7,10 +7,10 @@ class Equipment {
 public:
 	Equipment();
 
-	bool equip(Slot slot, ItemType item);
-	ItemType get(Slot slot);
+	bool equip(Slot slot, ItemName name);
+	ItemName get(Slot slot);
 private:
-	bool fits_slot(Slot slot, ItemType item);
+	bool fits_slot(Slot slot, ItemName name);
 
-	ItemType* slots;
+	ItemName* slots;
 };
