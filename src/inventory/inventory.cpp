@@ -1,5 +1,14 @@
 #include "inventory.h"
 
+/*static*/ bool Inventory::is_armor(ItemType item) {
+	switch (item) {
+		case RUSTED_HELMET:
+			return true;
+		default:
+			return false;
+	}
+}
+
 Inventory::Inventory() {
 	amounts = new int[ITEM_COUNT];
 	items = new Item*[ITEM_COUNT];

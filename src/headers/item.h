@@ -1,3 +1,5 @@
+#pragma once
+
 class Character;
 
 struct Item {
