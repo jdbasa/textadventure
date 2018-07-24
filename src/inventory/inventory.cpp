@@ -39,9 +39,9 @@ Item* Inventory::get(ItemType type) {
 
 Item* Inventory::create(ItemType type) {
 	switch (type) {
-		case ItemType::RUSTED_SWORD:
+		case RUSTED_SWORD:
 			return 0;
-		case ItemType::RUSTED_SHEILD:
+		case RUSTED_SHEILD:
 			return 0;
 		default:
 			return 0;
