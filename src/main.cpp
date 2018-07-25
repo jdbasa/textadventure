@@ -1,17 +1,13 @@
 #include <iostream>
-#include "map.h"
+#include "command.h"
+#include "game.h"
 
 using namespace std;
 
 int main(int args, char** cargs) {
-	Map map(10);
-	map.print(cout);
+	Game game;
+	game.update();
 
-	unsigned int x;
-	unsigned int y;
-	if (map.find_random_free(x, y)) {
-		map.spawn(0, x, y);
-		map.print(cout);
-	}
+	//cout << "The command from main is: " << comm << endl;
 	return 0;
 }

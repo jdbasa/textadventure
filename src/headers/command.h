@@ -10,6 +10,11 @@ namespace Commands {
 		EQUIP,
 		PICK_UP,
 		DROP,
+		NORTH,
+		SOUTH,
+		EAST,
+		WEST,
+		QUIT,
 		INVALID
 	};
 }

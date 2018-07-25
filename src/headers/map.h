@@ -23,4 +23,10 @@ private:
 
 	void add_wall_horizontal(unsigned int from, unsigned int to, unsigned int row);
 	void add_wall_vertical(unsigned int from, unsigned int to, unsigned int col);
+
+	struct Player {
+		Character character;
+		unsigned int x;
+		unsigned int y;
+	} player;
 };
