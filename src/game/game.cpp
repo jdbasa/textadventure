@@ -1,42 +1,64 @@
-#include <istream>
+#include <algorithm>
 #include <iostream>
-#include <map>
+#include <istream>
 #include <iterator>
+#include <map>
+#include <sstream>
 #include "command.h"
 #include "game.h"
 
 using namespace std;
 
 Commands::Command Game::get_command(istream& in) {	
-	map<string, Commands::Command> commMap;
+	map<string, Commands::Command> comm_map;
 
-	commMap.insert(pair<string, Commands::Command> 
+	comm_map.insert(pair<string, Commands::Command> 
 			("WALK", Commands::WALK));
-	commMap.insert(pair<string, Commands::Command> 
+	comm_map.insert(pair<string, Commands::Command> 
 			("INVENTORY", Commands::INVENTORY));
-	commMap.insert(pair<string, Commands::Command> 
+	comm_map.insert(pair<string, Commands::Command> 
 			("ARMOR", Commands::ARMOR));
-	commMap.insert(pair<string, Commands::Command> 
+	comm_map.insert(pair<string, Commands::Command> 
 			("WEAPON", Commands::WEAPON));
-	commMap.insert(pair<string, Commands::Command> 
+	comm_map.insert(pair<string, Commands::Command> 
 			("INFO", Commands::INFO));
-	commMap.insert(pair<string, Commands::Command> 
+	comm_map.insert(pair<string, Commands::Command> 
 			("EQUIP", Commands::EQUIP));
-	commMap.insert(pair<string, Commands::Command> 
+	comm_map.insert(pair<string, Commands::Command> 
 			("PICK_UP", Commands::PICK_UP));
-	commMap.insert(pair<string, Commands::Command> 
+	comm_map.insert(pair<string, Commands::Command> 
 			("DROP", Commands::DROP));
 	
-	string input;
+	string command;
+	string input_list[4];
 	cout << "Enter a command: ";
-	in >> input;	
+	getline(in, command);
 	
-	if (commMap.find(input) != commMap.end()) {
+	stringstream str(command);	
+	string buf;
+	
+	int i = 0;
+	while (str >> buf) {
+		transform(buf.begin(), buf.end(), buf.begin(), ::toupper);
+		input_list[i] = buf;
+		++i;	
+	}
+
+	string comm = input_list[0];
+	
+	cout << "The input command is: " << comm << endl;
+	cout << "The input param(s) is/are: ";
+	for (unsigned int i = 1; i < sizeof(input_list) / 
+			sizeof(input_list[1]); ++i) {
+		cout << input_list[i] << " ";
+	}
+	cout << endl;	
+	if (comm_map.find(comm) != comm_map.end()) {
 		cout << "The command you entered was: " 
-		     << commMap.find(input)->second << endl;
-		return commMap.find(input)->second;	
+		     << comm_map.find(comm)->second << endl;
+		return comm_map.find(comm)->second;	
 	} else {
-		cout << "Invalid command";
+		cout << "Invalid command" << endl;
 		return Commands::INVALID;
 	}
 }
