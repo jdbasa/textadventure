@@ -6,17 +6,21 @@
 
 class Area {
 public:
-	Area(unsigned int level);
+	Area();
 	~Area();
 
 	bool pick_up(Character& character, ItemName name);
+	void generate(unsigned int level);
+
+	bool initialized();
+	unsigned int get_level();
 
 	void print(std::ostream& out);
 private:
-	void generate();
 	bool remove(ItemName name);
 
-	const unsigned int level;
+	bool init;
+	unsigned int level;
 
 	unsigned int item_count;
 	ItemName* floor_items;

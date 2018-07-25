@@ -1,28 +1,17 @@
 #include <iostream>
-#include "area.h"
-#include "character.h"
+#include "map.h"
 
 using namespace std;
 
 int main(int args, char** cargs) {
-	Area area(1);
-	Character character;
+	Map map(10);
+	map.print(cout);
 
-	area.print(cout);
-	cout << "n" << endl;
-	character.inventory.print(cout);
-	cout << "e" << endl;
-
-	area.pick_up(character, RUSTED_SWORD);
-
-	area.print(cout);
-	cout << "n" << endl;
-	character.inventory.print(cout);
-	cout << "e" << endl;
-
-
-
-
-
+	unsigned int x;
+	unsigned int y;
+	if (map.find_random_free(x, y)) {
+		map.spawn(0, x, y);
+		map.print(cout);
+	}
 	return 0;
 }

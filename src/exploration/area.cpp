@@ -3,8 +3,7 @@
 
 using namespace std;
 
-Area::Area(unsigned int level) : level(level) {
-	generate();
+Area::Area() : init(false), level(0) {
 }
 
 Area::~Area() {
@@ -28,7 +27,11 @@ void Area::print(ostream& out) {
 	}
 }
 
-void Area::generate() {
+void Area::generate(unsigned int level) {
+	this->level = level;
+
+	init = true;
+
 	item_count = 3;
 	floor_items = new ItemName[item_count];
 	amounts = new unsigned int[item_count];
@@ -37,6 +40,14 @@ void Area::generate() {
 		floor_items[i] = RUSTED_SWORD;
 		amounts[i] = 1;
 	}
+}
+
+bool Area::initialized() {
+	return init;
+}
+
+unsigned int Area::get_level() {
+	return level;
 }
 
 bool Area::remove(ItemName name) {
